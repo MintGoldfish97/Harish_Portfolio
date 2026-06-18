@@ -338,7 +338,7 @@
       <div class="stack-card">
         <h4>Programming Languages</h4>
         <div class="pill-row">
-          <span class="pill">Python (basics)</span><span class="pill">Bash</span><span class="pill">SQL</span>
+          <span class="pill">Python (basics)</span><span class="pill">Bash (basics)</span><span class="pill">SQL (basics)</span>
         </div>
       </div>
       <div class="stack-card">
@@ -421,118 +421,4 @@
         SSH (Windows OpenSSH): failed password attempt for user $(win.eventdata.targetUserName)
     &lt;/<span class="tag-x">description</span>&gt;
     &lt;<span class="tag-x">mitre</span>&gt;&lt;<span class="tag-x">id</span>&gt;T1110&lt;/<span class="tag-x">id</span>&gt;&lt;/<span class="tag-x">mitre</span>&gt;
-    &lt;<span class="tag-x">group</span>&gt;authentication_failed,sshd,&lt;/<span class="tag-x">group</span>&gt;
-&lt;/<span class="tag-x">rule</span>&gt;</div>
-
-        <p><strong style="color:#eafff2;font-weight:600;">Custom rule — 100101 (SSH brute-force):</strong> correlates repeated 100100 hits against the same username within a time window.</p>
-        <div class="rule-box">&lt;<span class="tag-x">rule</span> <span class="attr">id</span>="100101" <span class="attr">level</span>="10" <span class="attr">frequency</span>="6" <span class="attr">timeframe</span>="120"&gt;
-    &lt;<span class="tag-x">if_matched_sid</span>&gt;100100&lt;/<span class="tag-x">if_matched_sid</span>&gt;
-    &lt;<span class="tag-x">same_field</span>&gt;win.eventdata.targetUserName&lt;/<span class="tag-x">same_field</span>&gt;
-    &lt;<span class="tag-x">description</span>&gt;
-        SSH (Windows OpenSSH) brute force: multiple failed password attempts for user $(win.eventdata.targetUserName)
-    &lt;/<span class="tag-x">description</span>&gt;
-    &lt;<span class="tag-x">mitre</span>&gt;&lt;<span class="tag-x">id</span>&gt;T1110&lt;/<span class="tag-x">id</span>&gt;&lt;/<span class="tag-x">mitre</span>&gt;
-    &lt;<span class="tag-x">group</span>&gt;authentication_failures,sshd,&lt;/<span class="tag-x">group</span>&gt;
-&lt;/<span class="tag-x">rule</span>&gt;</div>
-
-        <p>Triggers on 6 failed logins, against the same username, within 120 seconds.</p>
-
-        <img src="images/custom_rule.png" alt="local_rules.xml showing both custom rules" style="width:100%;border:1px solid var(--line);border-radius:4px;margin:14px 0 20px;">
-
-        <p><strong style="color:#eafff2;font-weight:600;">Attack simulation:</strong> launched repeated failed SSH login attempts from Kali Linux against the Windows target.</p>
-        <ul>
-          <li>Rule 100100 fired on each individual failed password attempt.</li>
-          <li>Rule 100101 fired as the high-severity correlated brute-force alert.</li>
-        </ul>
-
-        <img src="images/kali_ssh.png" alt="Kali Linux terminal running SSH brute-force attempt" style="width:100%;border:1px solid var(--line);border-radius:4px;margin:14px 0 20px;">
-
-        <img src="images/dashboard.png" alt="Wazuh alert detail for rule 100101" style="width:100%;border:1px solid var(--line);border-radius:4px;margin:14px 0 20px;">
-
-        <p><strong style="color:#eafff2;font-weight:600;">MITRE ATT&amp;CK mapping:</strong> T1110 — Brute Force, covering password-guessing attacks against remote services such as SSH.</p>
-
-        <p><strong style="color:#eafff2;font-weight:600;">Key takeaways:</strong></p>
-        <ul class="checklist">
-          <li>Understanding Wazuh rule inheritance via <code>if_sid</code></li>
-          <li>Event correlation using <code>frequency</code> and <code>timeframe</code></li>
-          <li>Customizing <code>local_rules.xml</code></li>
-          <li>Detecting Windows OpenSSH attacks instead of relying on generic failed-logon rules</li>
-          <li>Mapping detections to the MITRE ATT&amp;CK framework</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project">
-      <div class="project-head">
-        <h3>SSH Auth Log Analyzer — Brute-Force Flagging Script</h3>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Regex</span><span class="tag">Log Analysis</span></div>
-      </div>
-      <div class="project-body">
-        <p>A standalone Python script that parses SSH <code>auth.log</code> files to identify brute-force activity,
-        built as a companion to the Wazuh home lab for offline log review and reporting.</p>
-
-        <p><strong style="color:#eafff2;font-weight:600;">Approach:</strong></p>
-        <ul>
-          <li>Regex-based extraction of timestamps and source IP addresses from raw auth log entries.</li>
-          <li>Sliding-window logic to flag any IP address exceeding a configurable failed-attempt threshold within a set time window.</li>
-          <li>Aggregation of results into a structured CSV report for further review.</li>
-          <li>Visualization of the top offending IP addresses using Pandas and Matplotlib.</li>
-        </ul>
-
-        <p><strong style="color:#eafff2;font-weight:600;">Key takeaways:</strong></p>
-        <ul class="checklist">
-          <li>Parsing unstructured log data with regular expressions</li>
-          <li>Implementing sliding-window detection logic in Python</li>
-          <li>Working with Pandas for data aggregation and CSV export</li>
-          <li>Building simple visualizations with Matplotlib to summarize findings</li>
-        </ul>
-
-        <div class="ai-note">Note: image/diagram placeholders for this project can be added once available.</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="education">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">education</span></div>
-    <div class="edu-item">
-      <span class="yr">2021 – 2024</span>
-      <span class="what">B.Com with Computer Applications — Sasurie College of Arts &amp; Science</span>
-      <span class="score">CGPA: 7.8 / 10</span>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">07</span><span class="sec-title">contact</span></div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">Phone</div>
-        <div class="value">+91 6385836130</div>
-      </div>
-      <div class="contact-card">
-        <div class="label">Email</div>
-        <div class="value">harish240525@gmail.com</div>
-      </div>
-      <div class="contact-card">
-        <div class="label">LinkedIn</div>
-        <div class="value"><a href="https://linkedin.com/in/harishsec" target="_blank">linkedin.com/in/harishsec</a></div>
-      </div>
-      <div class="contact-card">
-        <div class="label">Portfolio</div>
-        <div class="value"><a href="https://mintgoldfish97.github.io/Portfolio/" target="_blank">mintgoldfish97.github.io/Portfolio/</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  built in a terminal, deployed on GitHub Pages — © Harish S
-</footer>
-
-</body>
-</html>
+    &lt;<span class="tag-x">group</span>&gt;authent
