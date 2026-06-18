@@ -54,7 +54,7 @@
   .brand{font-family:var(--mono);color:var(--green);font-size:14px;letter-spacing:0.5px;}
   .brand .blink{animation:blink 1.2s steps(2) infinite;}
   @keyframes blink{50%{opacity:0;}}
-  .navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:13px;}
+  .navlinks{display:flex;gap:22px;font-family:var(--mono);font-size:13px;}
   .navlinks a{color:var(--text-dim);}
   .navlinks a:hover{color:var(--green);}
   @media(max-width:640px){.navlinks{display:none;}}
@@ -123,6 +123,17 @@
   .skill-card{background:var(--bg-panel);padding:20px;}
   .skill-card h4{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:10px;letter-spacing:1px;text-transform:uppercase;}
   .skill-card p{font-size:13px;color:var(--text-dim);line-height:1.7;}
+
+  /* ---------- TECH STACK (tools) ---------- */
+  .stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+  .stack-card{background:var(--bg-panel);padding:20px;}
+  .stack-card h4{font-family:var(--mono);font-size:12px;color:var(--amber);margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-family:var(--mono);font-size:11.5px;padding:5px 10px;
+    border:1px solid var(--line);background:#0d1411;color:var(--text);
+    border-radius:3px;
+  }
 
   /* ---------- CERTS ---------- */
   .cert-list{display:flex;flex-direction:column;border:1px solid var(--line);}
@@ -220,6 +231,7 @@
     <div class="navlinks">
       <a href="#about">about</a>
       <a href="#skills">skills</a>
+      <a href="#stack">tools</a>
       <a href="#certs">certs</a>
       <a href="#projects">projects</a>
       <a href="#education">education</a>
@@ -253,7 +265,8 @@
         <div class="ln">name        : <span class="keyval">Harish S</span></div>
         <div class="ln">focus       : <span class="keyval">SOC Analyst / Cybersecurity Operations</span></div>
         <div class="ln">strengths   : <span class="keyval">Threat detection, vulnerability assessment, incident response</span></div>
-        <div class="ln">tools       : <span class="keyval">Splunk, Wazuh, Nmap, Nessus, Wireshark, Metasploit, Burp Suite</span></div>
+        <div class="ln">tools       : <span class="keyval">Splunk, Wazuh, Nmap, Wireshark, Metasploit, Burp Suite, Nessus,</span></div>
+        <div class="ln">              <span class="keyval">Netcat, Mandiant IOC Editor, Redline, Cisco Packet Tracer</span></div>
         <div class="ln">certs       : <span class="keyval">CEH · CCNA · MCSE · Linux Fundamentals · A+ · N+</span></div>
         <div class="ln">location    : <span class="keyval">India</span></div>
         <div class="ln"><span class="prompt">$</span> _</div>
@@ -268,7 +281,7 @@
     <div class="skill-grid">
       <div class="skill-card">
         <h4>Networking</h4>
-        <p>OSI &amp; TCP/IP, Subnetting, OSPF/EIGRP/RIP/BGP, VLANs, ACLs, NAT/PAT, STP, DNS, DHCP, SSH, Cisco ASA 5500.</p>
+        <p>OSI &amp; TCP/IP, Subnetting, OSPF/EIGRP/RIP/BGP, VLANs, ACLs, NAT/PAT, STP, DNS, DHCP, FTP, SMTP, SSH, Cisco ASA 5500.</p>
       </div>
       <div class="skill-card">
         <h4>Windows Server</h4>
@@ -280,7 +293,7 @@
       </div>
       <div class="skill-card">
         <h4>Cybersecurity Operations</h4>
-        <p>CIA Triad, Cyber Kill Chain, MITRE ATT&amp;CK, AAA, IR lifecycle, SOC workflows, OWASP Top 10.</p>
+        <p>CIA Triad, Cyber Kill Chain, MITRE ATT&amp;CK, AAA, IR lifecycle, SOC workflows, OWASP Top 10, malware &amp; phishing fundamentals.</p>
       </div>
       <div class="skill-card">
         <h4>SIEM &amp; Monitoring</h4>
@@ -294,9 +307,77 @@
   </div>
 </section>
 
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">technical skills &amp; tools</span></div>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h4>Networking</h4>
+        <div class="pill-row">
+          <span class="pill">Cisco Packet Tracer</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Server Administration</h4>
+        <div class="pill-row">
+          <span class="pill">Microsoft Windows Server 2019</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Linux Services</h4>
+        <div class="pill-row">
+          <span class="pill">Apache</span><span class="pill">Nginx</span><span class="pill">FTP</span><span class="pill">Samba</span><span class="pill">SSH</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Operating Systems</h4>
+        <div class="pill-row">
+          <span class="pill">Windows 7</span><span class="pill">Windows 8</span><span class="pill">Windows 10</span><span class="pill">Windows 11</span><span class="pill">Kali Linux</span><span class="pill">Ubuntu</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Programming Languages</h4>
+        <div class="pill-row">
+          <span class="pill">Python (basics)</span><span class="pill">Bash</span><span class="pill">SQL</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Security Tools</h4>
+        <div class="pill-row">
+          <span class="pill">Nmap</span><span class="pill">Wireshark</span><span class="pill">Metasploit</span><span class="pill">Burp Suite</span><span class="pill">Netcat</span><span class="pill">Nessus</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Threat Hunting Tools</h4>
+        <div class="pill-row">
+          <span class="pill">Mandiant IOC Editor</span><span class="pill">Redline</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Endpoint Security</h4>
+        <div class="pill-row">
+          <span class="pill">EDR/XDR Solutions (familiar)</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>SIEM Tools</h4>
+        <div class="pill-row">
+          <span class="pill">Splunk</span><span class="pill">Wazuh</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4>Network Security</h4>
+        <div class="pill-row">
+          <span class="pill">Cisco ASA 5500 Firewall</span><span class="pill">IDS/IPS Concepts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="certs">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">certifications</span></div>
+    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">certifications</span></div>
     <div class="cert-list">
       <div class="cert-row"><span class="cert-name">CEH — Certified Ethical Hacking</span><span class="cert-issuer">Prompt Infotech</span><span class="cert-date">Jul 2025</span></div>
       <div class="cert-row"><span class="cert-name">MCSE — Microsoft Certified Solution Expert</span><span class="cert-issuer">Prompt Infotech</span><span class="cert-date">Apr 2025</span></div>
@@ -311,7 +392,7 @@
 
 <section id="projects">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">projects</span></div>
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">projects</span></div>
 
     <!-- PROJECT 1 -->
     <div class="project">
@@ -381,107 +462,33 @@
       </div>
     </div>
 
-    <!-- PROJECT 3 -->
+    <!-- PROJECT 2 -->
     <div class="project">
       <div class="project-head">
         <h3>SSH Auth Log Analyzer — Brute-Force Flagging Script</h3>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Log Analysis</span></div>
+        <div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Regex</span><span class="tag">Log Analysis</span></div>
       </div>
       <div class="project-body">
-        <p>A standalone Python script that parses SSH <code>auth.log</code> files, flags IPs that exceed a failed-login
-        threshold within a sliding time window, and visualizes the noisiest offenders.</p>
+        <p>A standalone Python script that parses SSH <code>auth.log</code> files to identify brute-force activity,
+        built as a companion to the Wazuh home lab for offline log review and reporting.</p>
+
+        <p><strong style="color:#eafff2;font-weight:600;">Approach:</strong></p>
         <ul>
-          <li>Regex-based parsing of "Failed password" entries with timestamp and source IP extraction.</li>
-          <li>Sliding-window detection (default: 5+ failures within 5 minutes) per source IP.</li>
-          <li>Exports flagged IPs to <code>alerts.csv</code> and renders a horizontal bar chart of top offending IPs.</li>
+          <li>Regex-based extraction of timestamps and source IP addresses from raw auth log entries.</li>
+          <li>Sliding-window logic to flag any IP address exceeding a configurable failed-attempt threshold within a set time window.</li>
+          <li>Aggregation of results into a structured CSV report for further review.</li>
+          <li>Visualization of the top offending IP addresses using Pandas and Matplotlib.</li>
         </ul>
 
-        <pre class="code"><span class="cmt">#!/usr/bin/env python3</span>
-<span class="str">"""
-Simple SSH Log Analyzer — flags brute-force IPs.
-Edit LOG_FILE below, then just run: python simple_log_ids.py
-"""</span>
+        <p><strong style="color:#eafff2;font-weight:600;">Key takeaways:</strong></p>
+        <ul class="checklist">
+          <li>Parsing unstructured log data with regular expressions</li>
+          <li>Implementing sliding-window detection logic in Python</li>
+          <li>Working with Pandas for data aggregation and CSV export</li>
+          <li>Building simple visualizations with Matplotlib to summarize findings</li>
+        </ul>
 
-<span class="kw">import</span> re
-<span class="kw">import</span> pandas <span class="kw">as</span> pd
-<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
-
-<span class="cmt"># ---- EDIT THESE ----</span>
-LOG_FILE = <span class="str">r"E:\pyfiles\ssh log analyzer\auth.log"</span>      <span class="cmt"># path to your SSH log</span>
-FAILED_THRESHOLD = 5        <span class="cmt"># alerts if an IP fails this many times...</span>
-WINDOW_MINUTES = 5          <span class="cmt"># ...within this many minutes</span>
-<span class="cmt"># ---------------------</span>
-
-SSH_RE = re.compile(<span class="str">r'(?P&lt;time&gt;\w{3}\s+\d+ \d{2}:\d{2}:\d{2}).*Failed password.*from (?P&lt;ip&gt;\d+\.\d+\.\d+\.\d+)'</span>)
-
-<span class="kw">def</span> parse_log():
-    rows = []
-    <span class="kw">with</span> open(LOG_FILE, errors=<span class="str">"ignore"</span>) <span class="kw">as</span> f:
-        <span class="kw">for</span> line <span class="kw">in</span> f:
-            m = SSH_RE.search(line)
-            <span class="kw">if</span> m:
-                ts = pd.to_datetime(<span class="str">f"2026 {m['time']}"</span>, format=<span class="str">"%Y %b %d %H:%M:%S"</span>)
-                rows.append((m[<span class="str">"ip"</span>], ts))
-    <span class="kw">return</span> pd.DataFrame(rows, columns=[<span class="str">"ip"</span>, <span class="str">"time"</span>])
-
-<span class="kw">def</span> find_alerts(df):
-    alerts = []
-    window = pd.Timedelta(minutes=WINDOW_MINUTES)
-    <span class="kw">for</span> ip, group <span class="kw">in</span> df.groupby(<span class="str">"ip"</span>):
-        times = group[<span class="str">"time"</span>].sort_values().tolist()
-        i = 0
-        <span class="kw">for</span> j <span class="kw">in</span> range(len(times)):
-            <span class="kw">while</span> times[j] - times[i] > window:
-                i += 1
-            <span class="kw">if</span> j - i + 1 >= FAILED_THRESHOLD:
-                <span class="cmt"># count = total failed attempts for this IP (matches chart),</span>
-                <span class="cmt"># window is only used to detect/qualify the burst</span>
-                alerts.append({<span class="str">"ip"</span>: ip, <span class="str">"count"</span>: len(times), <span class="str">"first"</span>: times[i], <span class="str">"last"</span>: times[j]})
-                <span class="kw">break</span>
-    <span class="kw">return</span> pd.DataFrame(alerts)
-
-<span class="kw">def</span> main():
-    df = parse_log()
-    print(<span class="str">f"Parsed {len(df)} matching lines from {LOG_FILE}"</span>)
-
-    alerts = find_alerts(df)
-    <span class="kw">if</span> alerts.empty:
-        print(<span class="str">"No suspicious activity found."</span>)
-    <span class="kw">else</span>:
-        print(<span class="str">f"\n{len(alerts)} suspicious IP(s):"</span>)
-        print(alerts.to_string(index=False))
-        alerts.to_csv(<span class="str">"alerts.csv"</span>, index=False)
-        print(<span class="str">"\nSaved to alerts.csv"</span>)
-
-    <span class="cmt"># quick chart: top IPs by failed-login count</span>
-    top = df[<span class="str">"ip"</span>].value_counts().head(10)
-    top.plot(kind=<span class="str">"barh"</span>, title=<span class="str">"Top IPs by Failed SSH Logins"</span>)
-    plt.xlabel(<span class="str">"Failed attempts"</span>)
-    plt.gca().invert_yaxis()
-    plt.tight_layout()
-    plt.savefig(<span class="str">"top_ips.png"</span>)
-    print(<span class="str">"Chart saved to top_ips.png"</span>)
-
-<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
-    main()</pre>
-
-        <!-- COMMENT: Add screenshot of terminal output (parsed lines + alerts table) here -->
-        <img src="images/py_code.png" alt="local_rules.xml showing both custom rules" style="width:100%;border:1px solid var(--line);border-radius:4px;margin:14px 0 20px;">
-
-        <!-- COMMENT: Add the generated top_ips.png chart here -->
-        <div style="display:flex; gap:20px; align-items:stretch; margin:14px 0 20px;">
-
-    <img src="images/top_ips.png"
-         alt="Top IPs by Failed SSH Logins"
-         style="width:30%; object-fit:contain; border:1px solid var(--line); border-radius:4px;">
-
-    <img src="images/csv.png"
-         alt="CSV report"
-         style="width:70%; object-fit:contain; border:1px solid var(--line); border-radius:4px;">
-
-</div>
-        <p class="ai-note">Built with the help of AI — used as a learning exercise to understand log parsing, sliding-window
-        detection logic, and basic data visualization with pandas/matplotlib.</p>
+        <div class="ai-note">Note: image/diagram placeholders for this project can be added once available.</div>
       </div>
     </div>
 
@@ -490,34 +497,42 @@ SSH_RE = re.compile(<span class="str">r'(?P&lt;time&gt;\w{3}\s+\d+ \d{2}:\d{2}:\
 
 <section id="education">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">education</span></div>
+    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">education</span></div>
     <div class="edu-item">
       <span class="yr">2021 – 2024</span>
-      <span class="what">UG-Commerce with Computer Applications— Sasurie College of Arts &amp; Science</span>
-    </div>
-    <div class="edu-item">
-      <span class="yr">2020 – 2021</span>
-      <span class="what">Class 12th — State Board</span>
-    </div>
-    <div class="edu-item">
-      <span class="yr">2018 – 2019</span>
-      <span class="what">Class 10th — State Board</span>
+      <span class="what">B.Com with Computer Applications — Sasurie College of Arts &amp; Science</span>
+      <span class="score">CGPA: 7.8 / 10</span>
     </div>
   </div>
 </section>
 
 <section id="contact" style="border-bottom:none;">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">contact</span></div>
+    <div class="sec-head"><span class="sec-num">07</span><span class="sec-title">contact</span></div>
     <div class="contact-grid">
-      <div class="contact-card"><div class="label">Phone</div><div class="value">+91 6385836130</div></div>
-      <div class="contact-card"><div class="label">Email</div><div class="value">harish240525@gmail.com</div></div>
-      <div class="contact-card"><div class="label">LinkedIn</div><div class="value"><a href="https://linkedin.com/in/harishsec" target="_blank">linkedin.com/in/harishsec</a></div></div>
+      <div class="contact-card">
+        <div class="label">Phone</div>
+        <div class="value">+91 6385836130</div>
+      </div>
+      <div class="contact-card">
+        <div class="label">Email</div>
+        <div class="value">harish240525@gmail.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="label">LinkedIn</div>
+        <div class="value"><a href="https://linkedin.com/in/harishsec" target="_blank">linkedin.com/in/harishsec</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="label">Portfolio</div>
+        <div class="value"><a href="https://mintgoldfish97.github.io/Portfolio/" target="_blank">mintgoldfish97.github.io/Portfolio/</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>root@harish:~$ echo "thanks for reading" — built for SOC Analyst opportunities</footer>
+<footer>
+  built in a terminal, deployed on GitHub Pages — © Harish S
+</footer>
 
 </body>
 </html>
